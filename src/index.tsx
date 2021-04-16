@@ -1,7 +1,8 @@
 import { types, util } from 'vortex-api';
+import * as path from 'path';
 
-const GAME_ID = 'masseffectlegendaryedition';
-const STEAMAPP_ID = '1328670';
+const GAME_ID = 'masseffect3';
+const STEAMAPP_ID = '1238020';
 const ORIGINAPP_ID = '';
 
 function findGame(): string {
@@ -13,15 +14,18 @@ function main(context: types.IExtensionContext) {
 
     context.registerGame({
         id: GAME_ID,
-        name: 'Mass Effect Legendary Edition',
+        name: 'Mass Effect 3',
         mergeMods: true,
         queryPath: findGame,
         queryModPath: () => '.',
         logo: 'gameart.jpg',
-        executable: () => 'Mass Effect Legendary Edition.exe',
-        requiredFiles: [],
+        executable: () => path.join('Binaries', 'Win32', 'MassEffect3.exe'),
+        requiredFiles: [
+            path.join('Binaries', 'Win32', 'MassEffect3.exe')
+        ],
         details: {
-            steamAppId: STEAMAPP_ID
+            steamAppId: STEAMAPP_ID,
+            originAppId: ORIGINAPP_ID
         }
     });
 

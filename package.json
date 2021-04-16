@@ -1,10 +1,10 @@
 {
-  "name": "game-masseffectlegendaryedition",
-  "version": "0.0.2",
-  "description": "Adds support for Mass Effect Legendary Edition to Vortex",
+  "name": "game-masseffect3",
+  "version": "0.0.1",
+  "description": "Adds support for Mass Effect 3 to Vortex",
   "scripts": {
     "webpack": "node ./node_modules/webpack/bin/webpack --config webpack.config.js --display-error-details --progress --profile --color",
-    "copy_assets": "copyfiles -f assets/* dist && copyfiles -f assets/content/* dist/content",
+    "copy_assets": "copyfiles -f assets/* dist && copyfiles -f assets/content/me3/autotoc/* dist/content/me3/autotoc && copyfiles -f assets/content/me3/binkw32/* dist/content/me3/binkw32",
     "bundle7z": "del game-masseffectlegendaryedition.7z && 7z a -t7z game-masseffectlegendaryedition.7z .\\dist\\*",
     "build": "yarn run webpack && yarn run copy_assets && extractInfo && json -f dist\\info.json -I -e \"this.name=\\\"Game: Mass Effect Legendary Edition\\\"\""
   },
@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/Nexus-Mods/game-masseffectlegendaryedition.git"
   },
-  "author": "The Mass Effect Community",
+  "author": "Pickysaurus",
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/Nexus-Mods/game-masseffectlegendaryedition/issues"
@@ -20,11 +20,14 @@
   "homepage": "https://github.com/Nexus-Mods/game-masseffectlegendaryedition#readme",
   "devDependencies": {
     "copyfiles": "^2.1.1",
+    "json": "^9.0.6",
     "ts-loader": "^5.3.3",
     "typescript": "^4.2.4",
-    "json": "^9.0.6",
     "vortex-api": "Nexus-Mods/vortex-api",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "path": "^0.12.7"
   }
 }
