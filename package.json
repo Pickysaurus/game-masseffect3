@@ -4,7 +4,7 @@
   "description": "Adds support for Mass Effect 3 to Vortex",
   "scripts": {
     "webpack": "node ./node_modules/webpack/bin/webpack --config webpack.config.js --display-error-details --progress --profile --color",
-    "copy_assets": "copyfiles -f assets/* dist && copyfiles -f assets/content/me3/autotoc/* dist/content/me3/autotoc && copyfiles -f assets/content/me3/binkw32/* dist/content/me3/binkw32",
+    "copy_assets": "copyfiles -f assets/* dist && copyfiles -f assets/content/me3/asi/* dist/content/me3/asi && copyfiles -f assets/content/me3/* dist/content/me3/",
     "bundle7z": "del game-masseffectlegendaryedition.7z && 7z a -t7z game-masseffectlegendaryedition.7z .\\dist\\*",
     "build": "yarn run webpack && yarn run copy_assets && extractInfo && json -f dist\\info.json -I -e \"this.name=\\\"Game: Mass Effect Legendary Edition\\\"\""
   },
@@ -28,6 +28,7 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
+    "@types/node": "^14.14.41",
     "path": "^0.12.7"
   }
 }
