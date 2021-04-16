@@ -1,9 +1,9 @@
 import { types, util } from 'vortex-api';
 import * as path from 'path';
 
-const GAME_ID = 'masseffect3';
-const STEAMAPP_ID = '1238020';
-const ORIGINAPP_ID = '';
+const GAME_ID: string = 'masseffect3';
+const STEAMAPP_ID: string = '1238020';
+const ORIGINAPP_ID: string = 'DR:229644400';
 
 function findGame(): string {
     return util.GameStoreHelper.findByAppId([STEAMAPP_ID, ORIGINAPP_ID])
@@ -18,7 +18,7 @@ function main(context: types.IExtensionContext) {
         mergeMods: true,
         queryPath: findGame,
         queryModPath: () => '.',
-        logo: 'gameart.jpg',
+        logo: 'gameart-me3.jpg',
         executable: () => path.join('Binaries', 'Win32', 'MassEffect3.exe'),
         requiredFiles: [
             path.join('Binaries', 'Win32', 'MassEffect3.exe')

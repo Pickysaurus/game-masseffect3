@@ -1,6 +1,6 @@
 # Vortex Support for Mass Effect 3
 
-This extension is intended to allow mod management for ME3in Vortex. The ReadMe will be updated as developement progresses. 
+This extension is intended to allow mod management for ME3 in Vortex. The ReadMe will be updated as developement progresses. 
 
 ## Requirements
 
@@ -14,7 +14,7 @@ This extension is intended to allow mod management for ME3in Vortex. The ReadMe 
 
 This extension is still in development and is not full featured.
 
-- Automatic detection of the Steam version of the game. (EA Play/Origin detection pending)
+- Automatic detection of the Steam and Origin versions of the game.
 
 
 
