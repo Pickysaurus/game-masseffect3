@@ -7,6 +7,8 @@ const STEAMAPP_ID: string = '1238020';
 const ORIGINAPP_ID: string = 'DR:229644400';
 
 const FILE_TYPES: string[] = ['.afc', '.bin', '.cnd', '.pcc', '.tfc', '.tlk', '.upk'];
+const DLC_FILE_TYPE: string = 'default.sfar';
+const ME3TWEAKS_INI: string = 'moddesc.ini';
 
 // GamePaths
 const ASIPATH: (gamePath: string) => string = (gamePath: string) => path.join(gamePath, 'Binaries', 'Win32', 'asi');
@@ -21,6 +23,7 @@ const ME3_BINKW32: (gamePath: string) => string = (gamePath) => path.join(gamePa
 const ME3_AUTOTOCBINK = path.join(__dirname, 'content', 'ME3');
 
 export { 
-    GAME_ID, STEAMAPP_ID, ORIGINAPP_ID, ME3_AUTOTOCBINK, FILE_TYPES,
+    GAME_ID, STEAMAPP_ID, ORIGINAPP_ID, ME3_AUTOTOCBINK, FILE_TYPES, 
+    DLC_FILE_TYPE, ME3TWEAKS_INI,
     ME3_AUTOTOC, ME3_BINKW32, DLCPATH, COOKEDPATH, ASIPATH
 };

@@ -103,7 +103,7 @@ function main(context: types.IExtensionContext): boolean {
     });
 
     context.registerInstaller('me3-dlc-installer', 25, testDLCMod, installDLCMod);
-    context.registerModType('me3-dlc-modtype', 25, isDLCModType, getDLCPath, testDLCModType, { name: 'Mass Effect 3 DLC Mod' });
+    context.registerModType('me3-dlc-modtype', 25, isDLCModType, () => getDLCPath(context.api), testDLCModType, { name: 'Mass Effect 3 DLC Mod' });
 
     return true;
 }
